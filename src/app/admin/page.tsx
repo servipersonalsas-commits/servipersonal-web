@@ -3,10 +3,13 @@ import { createClient } from "@/lib/supabase/server";
 import { LogOut, Download, FileText, Mail, Phone, Building2, Calendar, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
+const allowedAdmins = ["servipersonalsas@gmail.com"];
+
 export default async function AdminDashboard() {
   const supabase = await createClient();
   const { data: userData } = await supabase.auth.getUser();
   if (!userData.user) redirect("/admin/login");
+  if (!allowedAdmins.includes(userData.user.email ?? "")) redirect("/admin/login");
 
   const { data: postulaciones } = await supabase
     .from("postulaciones")

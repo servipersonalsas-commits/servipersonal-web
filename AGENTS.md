@@ -27,7 +27,9 @@ Portfolio website for Servipersonal de Colombia S.A.S., a Colombian temporary st
 
 ## Architecture
 
-All pages are static server components. Forms are client components that use Supabase browser client. No auth required - anonymous users can submit forms and upload CVs.
+Public pages are static server components. Forms are client components that use Supabase browser client - anonymous users can submit forms and upload CVs.
+
+Admin panel at `/admin` requires authentication: protected by middleware (session refresh + redirect) and server-side email whitelist check. Only `servipersonalsas@gmail.com` can access.
 
 Key conventions:
 - No comments in code unless necessary
