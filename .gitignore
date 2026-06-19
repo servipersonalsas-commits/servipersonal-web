@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# docs (hidden until explicitly committed)
+SPEC.md
+README.md
+AGENTS.md
+CLAUDE.md
