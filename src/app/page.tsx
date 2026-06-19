@@ -1,24 +1,28 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Briefcase, TrendingUp, Shield } from "lucide-react";
+import { ArrowRight, Briefcase, TrendingUp, CheckCircle, Shield } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 
 const services = [
   {
+    num: "01",
     title: "Administracion de Nomina",
     desc: "Gestion completa de pagos y prestaciones sociales.",
     icon: Briefcase,
   },
   {
+    num: "02",
     title: "Reclutamiento y Seleccion",
     desc: "Identificacion del talento ideal para su empresa.",
     icon: TrendingUp,
   },
   {
+    num: "03",
     title: "Evaluacion de Desempeno",
     desc: "Medicion y mejora del rendimiento laboral.",
     icon: CheckCircle,
   },
   {
+    num: "04",
     title: "Seguridad y Salud en el Trabajo",
     desc: "Proteccion integral del personal y cumplimiento normativo.",
     icon: Shield,
@@ -86,11 +90,11 @@ export default function HomePage() {
             {services.map((s) => (
               <div
                 key={s.title}
-                className="group p-8 rounded-2xl bg-white border border-stone/60 hover:border-turquoise/30 hover:shadow-lg hover:shadow-turquoise/5 transition-all duration-300"
+                className="group p-8 bg-white border border-stone/60 hover:border-turquoise/30 hover:shadow-lg hover:shadow-turquoise/5 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-turquoise/10 flex items-center justify-center mb-5 group-hover:bg-turquoise/20 transition-colors">
-                  <s.icon size={24} className="text-turquoise" />
-                </div>
+                <span className="block text-5xl font-serif text-turquoise/20 font-bold leading-none mb-4">
+                  {s.num}
+                </span>
                 <h3 className="font-serif text-xl text-petroleum mb-2">
                   {s.title}
                 </h3>
@@ -139,11 +143,7 @@ export default function HomePage() {
                 Conocer mas <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-turquoise/20 to-petroleum/20" />
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 rounded-full border-2 border-dashed border-turquoise/30" />
-              <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full border-2 border-dashed border-petroleum/20" />
-            </div>
+            <div className="aspect-[4/3] bg-gradient-to-br from-turquoise/20 to-petroleum/20" />
           </div>
         </div>
       </section>
@@ -176,7 +176,7 @@ export default function HomePage() {
             ].map((v) => (
               <div
                 key={v.title}
-                className="p-8 rounded-2xl bg-petroleum text-white"
+                className="p-8 bg-petroleum text-white"
               >
                 <h3 className="font-serif text-xl text-turquoise-light mb-2">
                   {v.title}

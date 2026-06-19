@@ -4,18 +4,47 @@ import ContactForm from "@/components/ContactForm";
 export default function ContactoPage() {
   return (
     <>
-      <section className="py-24 bg-gradient-to-br from-petroleum-dark via-petroleum to-petroleum-light text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <span className="inline-block text-turquoise-light text-sm font-semibold uppercase tracking-[0.25em] mb-4">
-            Contacto
-          </span>
-          <h1 className="font-serif text-5xl md:text-6xl leading-tight mb-6">
-            Hablemos
-          </h1>
-          <p className="text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-            Estamos listos para atender sus requerimientos y ofrecerle la mejor
-            solucion en gestion del talento humano.
-          </p>
+      <section className="relative py-24 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-petroleum-dark via-petroleum to-petroleum-dark" />
+        <div className="relative max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-turquoise-light mb-4">
+                Contacto
+              </span>
+              <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95] mb-6">
+                Hablemos
+              </h1>
+              <p className="text-lg text-white/60 leading-relaxed max-w-md">
+                Estamos listos para atender sus requerimientos y ofrecerle la
+                mejor solucion en gestion del talento humano.
+              </p>
+              <div className="mt-8 space-y-3">
+                <div className="flex items-center gap-3 text-white/70 text-sm">
+                  <MapPin size={16} className="text-turquoise-light shrink-0" />
+                  CR 6 CL 50 B CC Plaza La Castellana OF 218, Monteria
+                </div>
+                <div className="flex items-center gap-3 text-white/70 text-sm">
+                  <Phone size={16} className="text-turquoise-light shrink-0" />
+                  313 518 1933
+                </div>
+                <div className="flex items-center gap-3 text-white/70 text-sm">
+                  <Mail size={16} className="text-turquoise-light shrink-0" />
+                  estservipersonal@gmail.com
+                </div>
+              </div>
+            </div>
+            <div className="hidden md:flex justify-end">
+              <div className="text-right">
+                <p className="text-8xl font-serif text-white/5 font-bold leading-none">
+                  06
+                </p>
+                <p className="text-xs text-white/20 mt-1 uppercase tracking-widest">
+                  Contacto
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -23,43 +52,7 @@ export default function ContactoPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-5 gap-12">
             <div className="md:col-span-2 space-y-8">
-              <div className="space-y-6">
-                <h2 className="font-serif text-2xl text-petroleum">
-                  Informacion de contacto
-                </h2>
-                <div className="space-y-4 text-sm text-charcoal/70">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-turquoise/10 flex items-center justify-center shrink-0">
-                      <MapPin size={18} className="text-turquoise" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-charcoal">Direccion</p>
-                      <p>CR 6 CL 50 B CC Plaza La Castellana OF 218</p>
-                      <p className="text-xs text-charcoal/50">Monteria, Colombia</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-turquoise/10 flex items-center justify-center shrink-0">
-                      <Phone size={18} className="text-turquoise" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-charcoal">Telefono</p>
-                      <p>313 518 1933</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-turquoise/10 flex items-center justify-center shrink-0">
-                      <Mail size={18} className="text-turquoise" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-charcoal">Correo electronico</p>
-                      <p>estservipersonal@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6 rounded-2xl bg-cream">
+              <div className="p-6 bg-cream">
                 <div className="flex items-center gap-3 mb-3">
                   <Clock size={18} className="text-turquoise" />
                   <h3 className="font-medium text-charcoal">
@@ -71,10 +64,29 @@ export default function ContactoPage() {
                 </p>
                 <p className="text-sm text-charcoal/60">Sabados: 8:00 AM - 12:00 PM</p>
               </div>
+              <div className="p-6 bg-cream">
+                <h3 className="font-medium text-charcoal mb-2">
+                  Informacion de contacto
+                </h3>
+                <div className="space-y-2 text-sm text-charcoal/60">
+                  <div className="flex items-center gap-3">
+                    <Phone size={14} className="text-turquoise shrink-0" />
+                    <span>313 518 1933</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail size={14} className="text-turquoise shrink-0" />
+                    <span>estservipersonal@gmail.com</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <MapPin size={14} className="text-turquoise shrink-0 mt-0.5" />
+                    <span>CR 6 CL 50 B CC Plaza La Castellana OF 218, Monteria</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="md:col-span-3">
-              <div className="p-8 rounded-2xl bg-white border border-stone/60">
+              <div className="p-8 bg-white border border-stone/60">
                 <h2 className="font-serif text-2xl text-petroleum mb-6">
                   Envienos un mensaje
                 </h2>
