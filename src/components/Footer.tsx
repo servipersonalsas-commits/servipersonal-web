@@ -20,7 +20,7 @@ export default function Footer() {
               Navegación
             </h4>
             <nav className="space-y-2">
-              {["Inicio", "Quiénes Somos", "Servicios", "Ventajas", "Contacto"].map(
+              {["Inicio", "Quiénes Somos", "Servicios", "Ventajas", "Trabaja con Nosotros", "Contacto"].map(
                 (item) => (
                   <a
                     key={item}
