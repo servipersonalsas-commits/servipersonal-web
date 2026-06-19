@@ -16,11 +16,11 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <div className="w-48 h-14 mb-6">
+            <div className="w-64 h-20 mb-6 bg-white/95 p-3 flex items-center">
               <img
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Servipersonal de Colombia S.A.S."
-                className="w-full h-full object-contain brightness-0 invert"
+                className="w-full h-full object-contain"
               />
             </div>
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
