@@ -103,7 +103,7 @@ export default function ServiciosPage() {
                     key={s.num}
                     className={`group ${group.radius} bg-white border border-stone/60 p-6 hover:border-turquoise/30 transition-colors`}
                   >
-                    <span className="block text-3xl font-serif text-turquoise/20 font-bold leading-none mb-3">
+                    <span className="block text-3xl font-serif text-turquoise/60 font-bold leading-none mb-3">
                       {s.num}
                     </span>
                     <h3 className="font-serif text-xl text-petroleum mb-2">

@@ -71,7 +71,7 @@ export default function HomePage() {
           </div>
         </div>
         <div
-          className="absolute bottom-0 left-0 right-0 h-32"
+          className="pointer-events-none absolute bottom-0 left-0 right-0 h-32"
           style={{
             background:
               "linear-gradient(to top, #ffffff 0%, transparent 100%)",
@@ -92,7 +92,7 @@ export default function HomePage() {
                 key={s.title}
                 className="group p-8 bg-white border border-stone/60 hover:border-turquoise/30 hover:shadow-lg hover:shadow-turquoise/5 transition-all duration-300"
               >
-                <span className="block text-5xl font-serif text-turquoise/20 font-bold leading-none mb-4">
+                <span className="block text-5xl font-serif text-turquoise/60 font-bold leading-none mb-4">
                   {s.num}
                 </span>
                 <h3 className="font-serif text-xl text-petroleum mb-2">

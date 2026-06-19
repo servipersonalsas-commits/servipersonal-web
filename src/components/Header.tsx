@@ -22,17 +22,11 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone/50">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-petroleum flex items-center justify-center text-white font-serif font-bold text-base leading-none transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
-            S
-          </div>
-          <div className="hidden sm:block">
-            <p className="text-sm font-semibold text-petroleum leading-tight font-serif">
-              Servipersonal
-            </p>
-            <p className="text-[10px] text-charcoal/50 uppercase tracking-widest">
-              de Colombia S.A.S.
-            </p>
-          </div>
+          <img
+            src="/logo.svg"
+            alt="Servipersonal de Colombia S.A.S."
+            className="h-10 w-auto"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center">

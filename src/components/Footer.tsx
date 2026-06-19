@@ -16,18 +16,12 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-turquoise flex items-center justify-center text-petroleum font-serif font-bold text-lg transform -rotate-3">
-                S
-              </div>
-              <div>
-                <p className="text-base font-semibold font-serif leading-tight">
-                  Servipersonal
-                </p>
-                <p className="text-xs text-white/50 uppercase tracking-widest">
-                  de Colombia S.A.S.
-                </p>
-              </div>
+            <div className="w-48 h-14 mb-6">
+              <img
+                src="/logo.svg"
+                alt="Servipersonal de Colombia S.A.S."
+                className="w-full h-full object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
               Gestion estrategica del talento humano para entidades publicas y
