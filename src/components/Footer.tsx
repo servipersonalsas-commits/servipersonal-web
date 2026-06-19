@@ -65,6 +65,14 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Servipersonal de Colombia S.A.S.
           Todos los derechos reservados.
         </div>
+        <div className="mt-8 text-center">
+          <a
+            href="/admin"
+            className="text-[10px] text-white/10 hover:text-white/30 transition"
+          >
+            Admin
+          </a>
+        </div>
       </div>
     </footer>
   );
