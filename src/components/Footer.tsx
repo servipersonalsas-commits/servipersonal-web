@@ -1,77 +1,101 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import Link from "next/link";
+
+const links = [
+  { href: "/", label: "Inicio" },
+  { href: "/quienes-somos", label: "Nosotros" },
+  { href: "/servicios", label: "Servicios" },
+  { href: "/ventajas", label: "Ventajas" },
+  { href: "/trabaja-con-nosotros", label: "Trabaja con nosotros" },
+  { href: "/contacto", label: "Contacto" },
+];
 
 export default function Footer() {
   return (
     <footer className="bg-petroleum text-white">
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-10">
-          <div>
-            <div className="w-12 h-12 rounded-full bg-turquoise/20 flex items-center justify-center text-turquoise font-bold text-lg mb-4">
-              S
+      <div className="max-w-6xl mx-auto px-6 py-20">
+        <div className="grid md:grid-cols-12 gap-12">
+          <div className="md:col-span-5">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-turquoise flex items-center justify-center text-petroleum font-serif font-bold text-lg transform -rotate-3">
+                S
+              </div>
+              <div>
+                <p className="text-base font-semibold font-serif leading-tight">
+                  Servipersonal
+                </p>
+                <p className="text-xs text-white/50 uppercase tracking-widest">
+                  de Colombia S.A.S.
+                </p>
+              </div>
             </div>
-            <p className="text-sm text-white/70 leading-relaxed max-w-xs">
-              Gestión estratégica del talento humano para entidades públicas y
+            <p className="text-sm text-white/60 leading-relaxed max-w-xs">
+              Gestion estrategica del talento humano para entidades publicas y
               privadas en Colombia.
             </p>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-turquoise-light mb-4">
-              Navegación
+          <div className="md:col-span-3">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-turquoise-light mb-4">
+              Navegacion
             </h4>
-            <nav className="space-y-2">
-              {["Inicio", "Quiénes Somos", "Servicios", "Ventajas", "Trabaja con Nosotros", "Contacto"].map(
-                (item) => (
-                  <a
-                    key={item}
-                    href={
-                      item === "Inicio"
-                        ? "/"
-                        : `/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "-")}`
-                    }
-                    className="block text-sm text-white/60 hover:text-turquoise-light transition-colors"
+            <ul className="space-y-2">
+              {links.map((l) => (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    className="text-sm text-white/60 hover:text-turquoise-light transition-colors"
                   >
-                    {item}
-                  </a>
-                )
-              )}
-            </nav>
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold uppercase tracking-widest text-turquoise-light mb-4">
+          <div className="md:col-span-4">
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-turquoise-light mb-4">
               Contacto
             </h4>
-            <div className="space-y-3 text-sm text-white/70">
-              <div className="flex items-start gap-3">
-                <MapPin size={16} className="mt-0.5 shrink-0 text-turquoise-light" />
+            <ul className="space-y-3 text-sm text-white/60">
+              <li className="flex items-start gap-3">
+                <MapPin size={14} className="mt-0.5 shrink-0 text-turquoise-light" />
                 <span>
-                  CR 6 CL 50 B CC Plaza La Castellana OF 218, Montería
+                  CR 6 CL 50 B CC Plaza La Castellana OF 218, Monteria
                 </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone size={16} className="shrink-0 text-turquoise-light" />
-                <span>313 518 1933</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail size={16} className="shrink-0 text-turquoise-light" />
-                <span>estservipersonal@gmail.com</span>
-              </div>
-            </div>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone size={14} className="shrink-0 text-turquoise-light" />
+                <a
+                  href="tel:+573135181933"
+                  className="hover:text-turquoise-light transition-colors"
+                >
+                  313 518 1933
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail size={14} className="shrink-0 text-turquoise-light" />
+                <a
+                  href="mailto:estservipersonal@gmail.com"
+                  className="hover:text-turquoise-light transition-colors"
+                >
+                  estservipersonal@gmail.com
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-white/40">
-          &copy; {new Date().getFullYear()} Servipersonal de Colombia S.A.S.
-          Todos los derechos reservados.
-        </div>
-        <div className="mt-8 text-center">
-          <a
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-white/40">
+          <p>
+            &copy; {new Date().getFullYear()} Servipersonal de Colombia S.A.S.
+          </p>
+          <Link
             href="/admin"
-            className="text-[10px] text-white/10 hover:text-white/30 transition"
+            className="text-white/20 hover:text-white/40 transition-colors"
           >
             Admin
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

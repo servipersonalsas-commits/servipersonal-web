@@ -34,15 +34,11 @@ export default function ContactoPage() {
                 </div>
               </div>
             </div>
-            <div className="hidden md:flex justify-end">
-              <div className="text-right">
-                <p className="text-8xl font-serif text-white/5 font-bold leading-none">
-                  06
-                </p>
-                <p className="text-xs text-white/20 mt-1 uppercase tracking-widest">
-                  Contacto
-                </p>
-              </div>
+            <div className="hidden md:block">
+              <p className="text-2xl text-white/30 font-serif italic leading-relaxed">
+                &ldquo;La atencion oportuna es parte del servicio que
+                ofrecemos.&rdquo;
+              </p>
             </div>
           </div>
         </div>
@@ -51,8 +47,8 @@ export default function ContactoPage() {
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-5 gap-12">
-            <div className="md:col-span-2 space-y-8">
-              <div className="p-6 bg-cream">
+            <div className="md:col-span-2 space-y-6">
+              <div className="p-6 rounded-2xl bg-cream">
                 <div className="flex items-center gap-3 mb-3">
                   <Clock size={18} className="text-turquoise" />
                   <h3 className="font-medium text-charcoal">
@@ -64,7 +60,7 @@ export default function ContactoPage() {
                 </p>
                 <p className="text-sm text-charcoal/60">Sabados: 8:00 AM - 12:00 PM</p>
               </div>
-              <div className="p-6 bg-cream">
+              <div className="p-6 rounded-2xl bg-cream">
                 <h3 className="font-medium text-charcoal mb-2">
                   Informacion de contacto
                 </h3>
@@ -86,7 +82,7 @@ export default function ContactoPage() {
             </div>
 
             <div className="md:col-span-3">
-              <div className="p-8 bg-white border border-stone/60">
+              <div className="p-8 rounded-md bg-white border border-stone/60">
                 <h2 className="font-serif text-2xl text-petroleum mb-6">
                   Envienos un mensaje
                 </h2>

@@ -46,64 +46,55 @@ const advantages = [
 export default function VentajasPage() {
   return (
     <>
-      <section className="relative py-24 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-petroleum to-petroleum-dark" />
-        <div className="relative max-w-5xl mx-auto px-6">
-          <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-turquoise-light mb-4">
-            Beneficios
-          </span>
-          <div className="flex items-end justify-between gap-8">
+      <section className="relative py-24 md:py-28 overflow-hidden bg-petroleum text-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-end justify-between gap-8 border-b border-white/10 pb-10">
             <div>
-              <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95]">
+              <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-turquoise-light mb-4">
+                Beneficios
+              </span>
+              <h1 className="font-serif text-5xl md:text-7xl leading-[0.95]">
                 Ventajas
               </h1>
-              <p className="mt-4 text-lg text-white/60 leading-relaxed max-w-lg">
-                Beneficios financieros y operativos que marcan la diferencia
-                para su organizacion.
-              </p>
             </div>
-            <div className="hidden md:block text-right">
-              <p className="text-7xl font-serif text-white/5 font-bold leading-none">
-                04
-              </p>
-              <p className="text-xs text-white/20 mt-1 uppercase tracking-widest">
-                Pilares
-              </p>
-            </div>
+            <p className="hidden md:block text-base text-white/60 max-w-xs text-right">
+              Cuatro pilares que hacen la diferencia financiera y operativa
+              para su organizacion.
+            </p>
           </div>
         </div>
       </section>
 
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="space-y-6">
+          <div className="divide-y divide-stone/60 border-y border-stone/60">
             {advantages.map((a, i) => (
               <div
                 key={a.title}
-                className="grid md:grid-cols-5 gap-8 p-8 md:p-10 bg-white border border-stone/60"
+                className="grid md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-12"
               >
-                <div className="md:col-span-2">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl font-serif text-turquoise/20 font-bold">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <a.icon size={22} className="text-turquoise" />
-                  </div>
-                  <h2 className="font-serif text-3xl text-petroleum mb-3">
+                <div className="md:col-span-1">
+                  <span className="text-sm font-mono text-charcoal/40">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <div className="md:col-span-5">
+                  <a.icon size={20} className="text-turquoise mb-4" />
+                  <h2 className="font-serif text-2xl md:text-3xl text-petroleum mb-3">
                     {a.title}
                   </h2>
                   <p className="text-charcoal/70 leading-relaxed text-sm">
                     {a.desc}
                   </p>
                 </div>
-                <div className="md:col-span-3 flex items-center">
+                <div className="md:col-span-6 md:border-l md:border-stone/60 md:pl-10">
                   <ul className="space-y-3">
                     {a.details.map((d) => (
                       <li
                         key={d}
-                        className="flex items-center gap-3 text-charcoal/70"
+                        className="flex items-start gap-3 text-charcoal/70 text-sm"
                       >
-                        <span className="w-1.5 h-1.5 bg-turquoise shrink-0" />
+                        <span className="w-1 h-1 mt-2 bg-turquoise shrink-0" />
                         {d}
                       </li>
                     ))}

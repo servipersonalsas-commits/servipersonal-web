@@ -1,7 +1,7 @@
 const groups = [
   {
     name: "Gestion Administrativa y Nomina",
-    color: "border-turquoise",
+    radius: "rounded-md",
     items: [
       {
         num: "01",
@@ -17,7 +17,7 @@ const groups = [
   },
   {
     name: "Seleccion y Desarrollo de Talento",
-    color: "border-petroleum",
+    radius: "rounded-2xl",
     items: [
       {
         num: "03",
@@ -38,7 +38,7 @@ const groups = [
   },
   {
     name: "Bienestar y Seguridad Laboral",
-    color: "border-turquoise",
+    radius: "rounded-3xl",
     items: [
       {
         num: "06",
@@ -53,6 +53,13 @@ const groups = [
     ],
   },
 ];
+
+const colsMap: Record<number, string> = {
+  1: "md:grid-cols-1",
+  2: "md:grid-cols-2",
+  3: "md:grid-cols-3",
+  4: "md:grid-cols-4",
+};
 
 export default function ServiciosPage() {
   return (
@@ -90,13 +97,11 @@ export default function ServiciosPage() {
                 </h2>
                 <div className="h-px flex-1 bg-stone" />
               </div>
-              <div
-                className={`grid md:grid-cols-${group.items.length === 2 ? "2" : "3"} gap-6`}
-              >
+              <div className={`grid ${colsMap[group.items.length] ?? "md:grid-cols-2"} gap-6`}>
                 {group.items.map((s) => (
                   <div
                     key={s.num}
-                    className="group border-l-2 border-turquoise/20 hover:border-turquoise pl-6 py-2 transition-colors"
+                    className={`group ${group.radius} bg-white border border-stone/60 p-6 hover:border-turquoise/30 transition-colors`}
                   >
                     <span className="block text-3xl font-serif text-turquoise/20 font-bold leading-none mb-3">
                       {s.num}

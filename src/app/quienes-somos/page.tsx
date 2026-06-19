@@ -61,7 +61,7 @@ export default function QuienesSomosPage() {
       <section className="py-24">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-10">
-            <div className="p-10 bg-white border border-stone/60">
+            <div className="p-10 rounded-md bg-white border border-stone/60">
               <div className="flex gap-4">
                 <span className="text-6xl font-serif text-turquoise/20 font-bold leading-none">M</span>
                 <div>
@@ -78,7 +78,7 @@ export default function QuienesSomosPage() {
                 </div>
               </div>
             </div>
-            <div className="p-10 bg-white border border-stone/60">
+            <div className="p-10 rounded-md bg-white border border-stone/60">
               <div className="flex gap-4">
                 <span className="text-6xl font-serif text-turquoise/20 font-bold leading-none">V</span>
                 <div>
@@ -120,7 +120,7 @@ export default function QuienesSomosPage() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="p-8 bg-white border border-stone/60 hover:border-turquoise/30 transition-colors"
+                className="p-8 rounded-3xl bg-white border border-stone/60 hover:border-turquoise/30 transition-colors"
               >
                 <v.icon size={22} className="text-turquoise mb-4" />
                 <h3 className="font-serif text-lg text-petroleum mb-2">
