@@ -12,6 +12,7 @@ Sitio en produccion: https://servipersonal-web.vercel.app
 - Zod v4 para validacion de formularios
 - Lucide React para iconos
 - Playfair Display (titulos) e Inter (cuerpo de texto), via `next/font/google`
+- Stock photography en `public/images/` (Unsplash / Pexels, libre uso comercial)
 
 ## Estructura del sitio
 

@@ -38,6 +38,7 @@ Key conventions:
 - Design aims to avoid AI-generated appearance
 - Spanish content throughout
 - Mobile-first responsive
+- Stock photography sourced from Unsplash and Pexels (free for commercial use, no attribution required) lives in `public/images/` and is wired via `next/image`
 - Docs (`SPEC.md`, `README.md`, `SECURITY.md`, `HANDOVER.md`, this file, `CLAUDE.md`) are gitignored
 
 ## Pages
