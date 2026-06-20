@@ -4,7 +4,10 @@ const groups = [
   {
     name: "Gestion Administrativa y Nomina",
     radius: "rounded-md",
-    image: null,
+    image: {
+      src: "/images/nomina-administrativa.jpg",
+      alt: "Vinculacion y gestion administrativa de personal",
+    },
     items: [
       {
         num: "01",
