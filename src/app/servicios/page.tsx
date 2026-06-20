@@ -1,4 +1,11 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Servicios",
+  description:
+    "Nómina, selección, capacitación, seguridad y salud en el trabajo, y bienestar laboral. Siete servicios agrupados en tres líneas de gestión.",
+};
 
 const groups = [
   {
@@ -90,8 +97,8 @@ export default function ServiciosPage() {
                 Nuestros <span className="text-turquoise">Servicios</span>
               </h1>
               <p className="mt-4 text-lg text-charcoal/60 leading-relaxed max-w-xl">
-                Soluciones integrales en gestión del talento humano para entidades
-                públicas y privadas.
+                Nómina, selección y bienestar para entidades públicas y privadas
+                en todo el país.
               </p>
             </div>
           </div>

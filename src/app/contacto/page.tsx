@@ -1,5 +1,12 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Contacto",
+  description:
+    "Escríbenos o visítanos en Montería. Resolvemos consultas sobre servicios temporales, nómina y selección de personal en todo el país.",
+};
 
 export default function ContactoPage() {
   return (
@@ -16,8 +23,8 @@ export default function ContactoPage() {
                 Hablemos
               </h1>
               <p className="text-lg text-white/60 leading-relaxed max-w-md">
-                Estamos listos para atender sus requerimientos y ofrecerle la
-                mejor solución en gestión del talento humano.
+                Estamos listos para responder sus requerimientos y acompañarlo
+                con el servicio que su organización necesita.
               </p>
               <div className="mt-8 space-y-3">
                 <div className="flex items-center gap-3 text-white/70 text-sm">

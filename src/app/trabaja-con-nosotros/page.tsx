@@ -1,5 +1,12 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import WorkWithUsForm from "@/components/WorkWithUsForm";
+
+export const metadata: Metadata = {
+  title: "Trabaja con Nosotros",
+  description:
+    "Envíanos tu hoja de vida y postúlate a las vacantes de Servipersonal. Revisamos cada candidatura y te contactamos cuando abramos una oportunidad afín.",
+};
 
 export default function TrabajaConNosotrosPage() {
   return (

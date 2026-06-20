@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
@@ -22,9 +23,12 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone/50">
       <div className="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between">
         <Link href="/" className="flex items-center group">
-          <img
+          <Image
             src="/logo.png"
             alt="Servipersonal de Colombia S.A.S."
+            width={956}
+            height={360}
+            priority
             className="h-12 sm:h-14 w-auto"
           />
         </Link>
@@ -57,13 +61,15 @@ export default function Header() {
           onClick={() => setOpen(!open)}
           className="md:hidden text-petroleum"
           aria-label="Menú"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-white border-t border-stone/50">
+        <div id="mobile-menu" className="md:hidden bg-white border-t border-stone/50">
           <nav className="max-w-6xl mx-auto px-6 py-4">
             {links.map((l) => {
               const active =

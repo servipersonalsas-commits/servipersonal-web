@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const links = [
   { href: "/", label: "Inicio" },
@@ -16,10 +17,12 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-5">
-            <div className="w-80 h-20 mb-6">
-              <img
+            <div className="w-80 h-20 mb-6 relative">
+              <Image
                 src="/logo.png"
                 alt="Servipersonal de Colombia S.A.S."
+                width={956}
+                height={360}
                 className="w-full h-full object-contain brightness-0 invert"
               />
             </div>

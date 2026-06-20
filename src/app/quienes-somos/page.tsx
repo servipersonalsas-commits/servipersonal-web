@@ -1,5 +1,12 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { Shield, Eye, Heart, TrendingUp, Zap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Quiénes Somos",
+  description:
+    "Empresa monteriana con cobertura nacional, especializada en servicios temporales y soluciones de talento humano para el sector público y privado.",
+};
 
 const values = [
   {
@@ -44,9 +51,10 @@ export default function QuienesSomosPage() {
           </h1>
           <div className="grid md:grid-cols-2 gap-12">
             <p className="text-lg text-charcoal/70 leading-relaxed">
-              Empresa especializada en la prestación de servicios temporales y en
-              la gestión integral del talento humano, brindando soporte operativo
-              y administrativo a entidades del sector público y privado.
+              Empresa monteriana con cobertura nacional, especializada en la
+              prestación de servicios temporales y en el acompañamiento
+              operativo y administrativo de entidades del sector público y
+              privado.
             </p>
             <div className="pl-6 border-l-2 border-turquoise/30">
               <p className="text-lg italic text-charcoal/80 leading-relaxed">
@@ -85,11 +93,10 @@ export default function QuienesSomosPage() {
                     Nuestra Misión
                   </h2>
                   <p className="text-charcoal/70 leading-relaxed">
-                    Brindar soluciones integrales y eficientes en la gestión del
-                    talento humano, mediante la prestación de servicios temporales y
-                    laborales, garantizando el cumplimiento estricto de la
-                    normatividad vigente, la continuidad operativa y la mitigación
-                    de riesgos laborales para las entidades públicas y privadas.
+                    Acompañar a las entidades públicas y privadas en la
+                    administración de su personal, mediante servicios temporales
+                    y laborales oportunos, con cumplimiento estricto de la
+                    normatividad vigente y mitigación de riesgos laborales.
                   </p>
                 </div>
               </div>
@@ -102,10 +109,10 @@ export default function QuienesSomosPage() {
                     Nuestra Visión
                   </h2>
                   <p className="text-charcoal/70 leading-relaxed">
-                    Ser una empresa reconocida a nivel nacional por su confiabilidad,
-                    solidez operativa y cumplimiento normativo en la prestación de
-                    servicios de gestión del talento humano, consolidándonos como un
-                    aliado estratégico para las entidades públicas y privadas.
+                    Consolidarnos como un aliado estratégico a nivel nacional,
+                    reconocido por la confiabilidad, la solidez operativa y el
+                    cumplimiento normativo en la administración de personal
+                    temporal para entidades públicas y privadas.
                   </p>
                 </div>
               </div>

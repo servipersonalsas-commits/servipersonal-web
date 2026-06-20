@@ -1,11 +1,18 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { DollarSign, Globe, Clock, ShieldCheck } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Ventajas",
+  description:
+    "Reducción de costos, cobertura nacional, liberación operativa y cumplimiento normativo. Cuatro pilares que respaldan nuestra propuesta de valor.",
+};
 
 const advantages = [
   {
     icon: DollarSign,
     title: "Reducción de Costos",
-    desc: "Contribución a la eficiencia del gasto mediante la optimización de los procesos administrativos asociados a la gestión del talento humano.",
+    desc: "Contribución a la eficiencia del gasto mediante la optimización de los procesos administrativos asociados a la operación de su equipo de trabajo.",
     details: [
       "Optimización de procesos administrativos",
       "Reducción de carga operativa interna",

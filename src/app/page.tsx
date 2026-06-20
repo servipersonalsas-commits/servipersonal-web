@@ -1,7 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { ArrowRight, Briefcase, TrendingUp, CheckCircle, Shield } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
+
+export const metadata: Metadata = {
+  title: "Inicio",
+  description:
+    "Servipersonal de Colombia S.A.S.: servicios temporales, nómina y selección de personal con cobertura nacional desde Montería.",
+};
 
 const services = [
   {
@@ -52,8 +59,8 @@ export default function HomePage() {
               <span className="text-turquoise"> Talento Humano</span>
             </h1>
             <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-lg">
-              Soluciones integrales en servicios temporales y gestión del talento
-              humano para entidades públicas y privadas en Colombia.
+              Outsourcing de personal, nómina y selección para entidades
+              públicas y privadas en Colombia.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -85,7 +92,7 @@ export default function HomePage() {
           <SectionHeading
             label="Servicios"
             title="Soluciones en Gestión Humana"
-            description="Ofrecemos un portafolio completo de servicios para optimizar la gestión del talento humano en su organización."
+            description="Un portafolio completo para cubrir las necesidades operativas y administrativas de su equipo de trabajo."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s) => (
@@ -168,7 +175,7 @@ export default function HomePage() {
             {[
               {
                 title: "Reducción de Costos",
-                desc: "Optimización de procesos administrativos asociados a la gestión del talento humano.",
+                desc: "Optimización de procesos administrativos asociados a la operación de su equipo de trabajo.",
               },
               {
                 title: "Agilidad Nacional",

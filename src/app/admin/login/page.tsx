@@ -2,6 +2,7 @@
 
 import { useState, FormEvent, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 
 export default function AdminLoginPage() {
@@ -39,11 +40,13 @@ export default function AdminLoginPage() {
     <div className="min-h-[80vh] flex items-center justify-center px-6">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <div className="w-16 h-16 rounded-full bg-white border border-stone flex items-center justify-center mx-auto mb-4 p-2.5">
-            <img
+          <div className="w-16 h-16 rounded-full bg-white border border-stone flex items-center justify-center mx-auto mb-4 p-2.5 relative overflow-hidden">
+            <Image
               src="/logo-icon.png"
               alt="Servipersonal de Colombia S.A.S."
-              className="w-full h-full object-contain"
+              width={256}
+              height={256}
+              className="object-contain"
             />
           </div>
           <h1 className="text-2xl font-bold text-petroleum font-serif">

@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { z } from "zod";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
+import FormField from "@/components/FormField";
 
 const schema = z.object({
   nombre: z.string().min(2, "Ingresa tu nombre"),
@@ -50,12 +51,7 @@ export default function ContactForm() {
     setStatus("sending");
 
     const supabase = createClient();
-    const { error } = await supabase.from("contactos").insert([
-      {
-        ...result.data,
-        created_at: new Date().toISOString(),
-      },
-    ]);
+    const { error } = await supabase.from("contactos").insert([result.data]);
 
     if (error) {
       setStatus("error");
@@ -81,28 +77,32 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div className="grid sm:grid-cols-2 gap-5">
-        <Field
+        <FormField
+          id="contact-nombre"
           label="Nombre"
           name="nombre"
           placeholder="Tu nombre"
           error={errors.nombre}
         />
-        <Field
+        <FormField
+          id="contact-empresa"
           label="Empresa / Entidad"
           name="empresa"
           placeholder="Nombre de la entidad"
           error={errors.empresa}
         />
-        <Field
+        <FormField
+          id="contact-email"
           label="Correo electrónico"
           name="email"
           type="email"
           placeholder="correo@entidad.gov.co"
           error={errors.email}
         />
-        <Field
+        <FormField
+          id="contact-telefono"
           label="Teléfono"
           name="telefono"
           type="tel"
@@ -111,20 +111,15 @@ export default function ContactForm() {
         />
       </div>
 
-      <div>
-        <label className="block text-sm font-medium text-charcoal/80 mb-1.5">
-          Mensaje
-        </label>
-        <textarea
-          name="mensaje"
-          rows={4}
-          placeholder="Escriba su mensaje aquí..."
-          className="w-full px-4 py-3 rounded-lg border border-stone/80 bg-white text-sm placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-turquoise/40 focus:border-turquoise transition-all resize-none"
-        />
-        {errors.mensaje && (
-          <p className="text-xs text-red-500 mt-1">{errors.mensaje}</p>
-        )}
-      </div>
+      <FormField
+        id="contact-mensaje"
+        label="Mensaje"
+        name="mensaje"
+        placeholder="Escriba su mensaje aquí..."
+        rows={4}
+        multiline
+        error={errors.mensaje}
+      />
 
       <button
         type="submit"
@@ -141,40 +136,11 @@ export default function ContactForm() {
       </button>
 
       {status === "error" && (
-        <div className="flex items-center gap-2 text-red-500 text-sm">
+        <div className="flex items-center gap-2 text-red-500 text-sm" role="alert">
           <AlertCircle size={16} />
           Error al enviar. Intenta de nuevo.
         </div>
       )}
     </form>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  placeholder,
-  error,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder: string;
-  error?: string;
-}) {
-  return (
-    <div>
-      <label className="block text-sm font-medium text-charcoal/80 mb-1.5">
-        {label}
-      </label>
-      <input
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        className="w-full px-4 py-3 rounded-lg border border-stone/80 bg-white text-sm placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-turquoise/40 focus:border-turquoise transition-all"
-      />
-      {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
-    </div>
   );
 }

@@ -16,9 +16,36 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Servipersonal de Colombia S.A.S. | Gestión Estratégica del Talento Humano",
+  metadataBase: new URL("https://servipersonal-web.vercel.app"),
+  title: {
+    default: "Servipersonal de Colombia S.A.S.",
+    template: "%s | Servipersonal de Colombia S.A.S.",
+  },
   description:
-    "Empresa especializada en servicios temporales y gestión integral del talento humano para entidades del sector público y privado en Colombia.",
+    "Servicios temporales, selección de talento y administración de nómina para entidades públicas y privadas en Colombia.",
+  applicationName: "Servipersonal de Colombia S.A.S.",
+  authors: [{ name: "Servipersonal de Colombia S.A.S." }],
+  generator: "Next.js",
+  keywords: [
+    "Servipersonal",
+    "talento humano Colombia",
+    "servicios temporales",
+    "nómina",
+    "selección de personal",
+    "Montería",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "es_CO",
+    siteName: "Servipersonal de Colombia S.A.S.",
+    title: "Servipersonal de Colombia S.A.S.",
+    description:
+      "Servicios temporales, selección de talento y administración de nómina para entidades públicas y privadas en Colombia.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

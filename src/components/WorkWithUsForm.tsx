@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, useId } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { z } from "zod";
 import { Upload, CheckCircle, AlertCircle, FileText } from "lucide-react";
+import FormField from "@/components/FormField";
 
 const schema = z.object({
   nombre: z.string().min(2, "Ingresa tu nombre"),
@@ -21,6 +22,8 @@ export default function WorkWithUsForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [file, setFile] = useState<File | null>(null);
+  const fileInputId = useId();
+  const fileErrorId = `${fileInputId}-error`;
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -76,7 +79,7 @@ export default function WorkWithUsForm() {
 
     const { error: uploadError } = await supabase.storage
       .from("cvs")
-      .upload(`public/${filePath}`, file);
+      .upload(filePath, file);
 
     if (uploadError) {
       setStatus("error");
@@ -87,7 +90,6 @@ export default function WorkWithUsForm() {
       {
         ...result.data,
         archivo: filePath,
-        created_at: new Date().toISOString(),
       },
     ]);
 
@@ -116,29 +118,33 @@ export default function WorkWithUsForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div className="grid sm:grid-cols-2 gap-5">
-        <Field
+        <FormField
+          id="wwu-nombre"
           label="Nombre completo"
           name="nombre"
           placeholder="Tu nombre"
           error={errors.nombre}
         />
-        <Field
+        <FormField
+          id="wwu-email"
           label="Correo electrónico"
           name="email"
           type="email"
           placeholder="correo@ejemplo.com"
           error={errors.email}
         />
-        <Field
+        <FormField
+          id="wwu-telefono"
           label="Teléfono"
           name="telefono"
           type="tel"
           placeholder="300 123 4567"
           error={errors.telefono}
         />
-        <Field
+        <FormField
+          id="wwu-cargo"
           label="Cargo de interés"
           name="cargo"
           placeholder="Ej: Auxiliar administrativo"
@@ -147,14 +153,20 @@ export default function WorkWithUsForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-charcoal/80 mb-1.5">
+        <label
+          htmlFor={fileInputId}
+          className="block text-sm font-medium text-charcoal/80 mb-1.5"
+        >
           Hoja de vida (PDF o Word)
         </label>
         <div className="relative">
           <input
+            id={fileInputId}
             type="file"
             accept=".pdf,.doc,.docx"
             onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+            aria-invalid={errors.archivo ? true : undefined}
+            aria-describedby={errors.archivo ? fileErrorId : undefined}
             className="absolute inset-0 opacity-0 cursor-pointer"
           />
           <div className="flex items-center gap-3 px-4 py-3 rounded-lg border border-dashed border-stone/80 bg-white/50 text-sm text-charcoal/50 hover:border-turquoise/50 transition-colors">
@@ -170,7 +182,9 @@ export default function WorkWithUsForm() {
           </div>
         </div>
         {errors.archivo && (
-          <p className="text-xs text-red-500 mt-1">{errors.archivo}</p>
+          <p id={fileErrorId} className="text-xs text-red-500 mt-1">
+            {errors.archivo}
+          </p>
         )}
       </div>
 
@@ -183,40 +197,11 @@ export default function WorkWithUsForm() {
       </button>
 
       {status === "error" && (
-        <div className="flex items-center gap-2 text-red-500 text-sm">
+        <div className="flex items-center gap-2 text-red-500 text-sm" role="alert">
           <AlertCircle size={16} />
           Error al enviar. Intenta de nuevo.
         </div>
       )}
     </form>
-  );
-}
-
-function Field({
-  label,
-  name,
-  type = "text",
-  placeholder,
-  error,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder: string;
-  error?: string;
-}) {
-  return (
-    <div>
-      <label className="block text-sm font-medium text-charcoal/80 mb-1.5">
-        {label}
-      </label>
-      <input
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        className="w-full px-4 py-3 rounded-lg border border-stone/80 bg-white text-sm placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-turquoise/40 focus:border-turquoise transition-all"
-      />
-      {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
-    </div>
   );
 }

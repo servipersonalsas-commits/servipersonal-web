@@ -18,6 +18,7 @@ import {
   deletePostulacion,
   deleteContacto,
 } from "@/app/admin/actions";
+import ConfirmDialog from "@/components/ConfirmDialog";
 
 type Postulacion = {
   id: number;
@@ -53,9 +54,13 @@ export default function AdminDashboardClient({
   const [dateTo, setDateTo] = useState("");
   const [pending, startTransition] = useTransition();
   const [deletingId, setDeletingId] = useState<number | null>(null);
+  const [dialog, setDialog] = useState<
+    | { id: number; type: "postulacion" | "contacto" }
+    | null
+  >(null);
 
-  const filterByDate = <T extends { created_at: string }>(items: T[]) => {
-    return items.filter((item) => {
+  const filteredPostulaciones = useMemo(() => {
+    const filtered = postulaciones.filter((item) => {
       const d = new Date(item.created_at);
       if (dateFrom && d < new Date(dateFrom)) return false;
       if (dateTo) {
@@ -65,24 +70,30 @@ export default function AdminDashboardClient({
       }
       return true;
     });
-  };
-
-  const sortByDate = <T extends { created_at: string }>(items: T[]) =>
-    [...items].sort((a, b) => {
+    return filtered.sort((a, b) => {
       const da = new Date(a.created_at).getTime();
       const db = new Date(b.created_at).getTime();
       return order === "desc" ? db - da : da - db;
     });
+  }, [postulaciones, dateFrom, dateTo, order]);
 
-  const filteredPostulaciones = useMemo(
-    () => sortByDate(filterByDate(postulaciones)),
-    [postulaciones, dateFrom, dateTo, order]
-  );
-
-  const filteredContactos = useMemo(
-    () => sortByDate(filterByDate(contactos)),
-    [contactos, dateFrom, dateTo, order]
-  );
+  const filteredContactos = useMemo(() => {
+    const filtered = contactos.filter((item) => {
+      const d = new Date(item.created_at);
+      if (dateFrom && d < new Date(dateFrom)) return false;
+      if (dateTo) {
+        const to = new Date(dateTo);
+        to.setHours(23, 59, 59, 999);
+        if (d > to) return false;
+      }
+      return true;
+    });
+    return filtered.sort((a, b) => {
+      const da = new Date(a.created_at).getTime();
+      const db = new Date(b.created_at).getTime();
+      return order === "desc" ? db - da : da - db;
+    });
+  }, [contactos, dateFrom, dateTo, order]);
 
   function clearFilters() {
     setDateFrom("");
@@ -90,9 +101,13 @@ export default function AdminDashboardClient({
     setOrder("desc");
   }
 
-  function handleDelete(id: number, type: "postulacion" | "contacto") {
-    if (!confirm("¿Eliminar este registro? Esta acción no se puede deshacer."))
-      return;
+  function requestDelete(id: number, type: "postulacion" | "contacto") {
+    setDialog({ id, type });
+  }
+
+  function confirmDelete() {
+    if (!dialog) return;
+    const { id, type } = dialog;
     setDeletingId(id);
     startTransition(async () => {
       try {
@@ -100,6 +115,7 @@ export default function AdminDashboardClient({
         else await deleteContacto(id);
       } finally {
         setDeletingId(null);
+        setDialog(null);
       }
     });
   }
@@ -227,7 +243,7 @@ export default function AdminDashboardClient({
                     </td>
                     <td className="px-4 py-3">
                       <button
-                        onClick={() => handleDelete(p.id, "postulacion")}
+                        onClick={() => requestDelete(p.id, "postulacion")}
                         disabled={pending && deletingId === p.id}
                         className="text-charcoal/30 hover:text-red-500 transition disabled:opacity-30"
                         title="Eliminar"
@@ -299,7 +315,7 @@ export default function AdminDashboardClient({
                     })}
                   </span>
                   <button
-                    onClick={() => handleDelete(c.id, "contacto")}
+                    onClick={() => requestDelete(c.id, "contacto")}
                     disabled={pending && deletingId === c.id}
                     className="text-charcoal/30 hover:text-red-500 transition disabled:opacity-30"
                     title="Eliminar"
@@ -315,6 +331,18 @@ export default function AdminDashboardClient({
           </div>
         )}
       </section>
+
+      <ConfirmDialog
+        open={dialog !== null}
+        title="Eliminar registro"
+        message="Esta acción no se puede deshacer. El registro y, si aplica, el archivo adjunto se eliminarán de forma permanente."
+        confirmLabel="Eliminar"
+        cancelLabel="Cancelar"
+        destructive
+        loading={pending}
+        onConfirm={confirmDelete}
+        onCancel={() => setDialog(null)}
+      />
     </div>
   );
 }
