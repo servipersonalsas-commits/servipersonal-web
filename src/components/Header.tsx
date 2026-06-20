@@ -6,12 +6,12 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { num: "01", href: "/", label: "Inicio" },
-  { num: "02", href: "/quienes-somos", label: "Nosotros" },
-  { num: "03", href: "/servicios", label: "Servicios" },
-  { num: "04", href: "/ventajas", label: "Ventajas" },
-  { num: "05", href: "/trabaja-con-nosotros", label: "Talento" },
-  { num: "06", href: "/contacto", label: "Contacto" },
+  { href: "/", label: "Inicio" },
+  { href: "/quienes-somos", label: "Nosotros" },
+  { href: "/servicios", label: "Servicios" },
+  { href: "/ventajas", label: "Ventajas" },
+  { href: "/trabaja-con-nosotros", label: "Talento" },
+  { href: "/contacto", label: "Contacto" },
 ];
 
 export default function Header() {
@@ -47,9 +47,6 @@ export default function Header() {
                     : "text-charcoal/70 hover:text-petroleum"
                 }`}
               >
-                <span className="text-[10px] font-mono opacity-50">
-                  {l.num}
-                </span>
                 <span>{l.label}</span>
               </Link>
             );
@@ -82,9 +79,6 @@ export default function Header() {
                     active ? "text-turquoise" : "text-charcoal/80"
                   }`}
                 >
-                  <span className="text-xs font-mono opacity-50">
-                    {l.num}
-                  </span>
                   <span className="text-lg">{l.label}</span>
                 </Link>
               );
