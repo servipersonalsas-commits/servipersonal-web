@@ -41,6 +41,14 @@ export const metadata: Metadata = {
     title: "Servipersonal de Colombia S.A.S.",
     description:
       "Servicios temporales, selección de talento y administración de nómina para entidades públicas y privadas en Colombia.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Servipersonal de Colombia S.A.S. - Gestión estratégica del talento humano",
+      },
+    ],
   },
   robots: {
     index: true,
