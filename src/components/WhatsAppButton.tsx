@@ -1,4 +1,4 @@
-const PHONE = "573135181933";
+const PHONE = "573205498482";
 const MESSAGE = encodeURIComponent(
   "Hola, vi su portafolio web y quisiera más información"
 );

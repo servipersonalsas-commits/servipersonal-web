@@ -33,7 +33,7 @@ export default function ContactoPage() {
                 </div>
                 <div className="flex items-center gap-3 text-white/70 text-sm">
                   <Phone size={16} className="text-turquoise-light shrink-0" />
-                  313 518 1933
+                  320 549 8482
                 </div>
                 <div className="flex items-center gap-3 text-white/70 text-sm">
                   <Mail size={16} className="text-turquoise-light shrink-0" />
@@ -74,7 +74,7 @@ export default function ContactoPage() {
                 <div className="space-y-2 text-sm text-charcoal/60">
                   <div className="flex items-center gap-3">
                     <Phone size={14} className="text-turquoise shrink-0" />
-                    <span>313 518 1933</span>
+                    <span>320 549 8482</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail size={14} className="text-turquoise shrink-0" />
