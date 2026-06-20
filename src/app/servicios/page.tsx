@@ -1,7 +1,10 @@
+import Image from "next/image";
+
 const groups = [
   {
     name: "Gestion Administrativa y Nomina",
     radius: "rounded-md",
+    image: null,
     items: [
       {
         num: "01",
@@ -18,6 +21,10 @@ const groups = [
   {
     name: "Seleccion y Desarrollo de Talento",
     radius: "rounded-2xl",
+    image: {
+      src: "/images/capacitacion.jpg",
+      alt: "Capacitacion y formacion de equipos de trabajo",
+    },
     items: [
       {
         num: "03",
@@ -39,6 +46,10 @@ const groups = [
   {
     name: "Bienestar y Seguridad Laboral",
     radius: "rounded-3xl",
+    image: {
+      src: "/images/seguridad-sst.jpg",
+      alt: "Seguridad y salud en el trabajo",
+    },
     items: [
       {
         num: "06",
@@ -97,6 +108,17 @@ export default function ServiciosPage() {
                 </h2>
                 <div className="h-px flex-1 bg-stone" />
               </div>
+              {group.image && (
+                <div className={`relative aspect-[21/9] overflow-hidden mb-8 ${group.radius}`}>
+                  <Image
+                    src={group.image.src}
+                    alt={group.image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 1024px"
+                  />
+                </div>
+              )}
               <div className={`grid ${colsMap[group.items.length] ?? "md:grid-cols-2"} gap-6`}>
                 {group.items.map((s) => (
                   <div

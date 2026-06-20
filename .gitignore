@@ -39,6 +39,9 @@ supabase/.temp/
 # vercel
 .vercel
 
+# utility scripts (local only)
+descargar-imagenes.ps1
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

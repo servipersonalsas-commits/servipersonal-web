@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { DollarSign, Globe, Clock, ShieldCheck } from "lucide-react";
 
 const advantages = [
@@ -47,7 +48,18 @@ export default function VentajasPage() {
   return (
     <>
       <section className="relative py-24 md:py-28 overflow-hidden bg-petroleum text-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/ventajas-financiero.jpg"
+            alt="Analisis financiero y operativo"
+            fill
+            className="object-cover opacity-25"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-petroleum via-petroleum/95 to-petroleum/80" />
+        </div>
+        <div className="relative max-w-6xl mx-auto px-6">
           <div className="flex items-end justify-between gap-8 border-b border-white/10 pb-10">
             <div>
               <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-turquoise-light mb-4">

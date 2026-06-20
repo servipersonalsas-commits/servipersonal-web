@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Briefcase, TrendingUp, CheckCircle, Shield } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 
@@ -143,7 +144,15 @@ export default function HomePage() {
                 Conocer mas <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="aspect-[4/3] bg-gradient-to-br from-turquoise/20 to-petroleum/20" />
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/equipo-home.jpg"
+                alt="Equipo de Servipersonal de Colombia trabajando en conjunto"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>

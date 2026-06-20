@@ -1,3 +1,4 @@
+import Image from "next/image";
 import WorkWithUsForm from "@/components/WorkWithUsForm";
 
 export default function TrabajaConNosotrosPage() {
@@ -24,6 +25,20 @@ export default function TrabajaConNosotrosPage() {
                 abramos una vacante afín a tu perfil.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6 pt-12">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative aspect-[21/9] overflow-hidden rounded-md">
+            <Image
+              src="/images/bienestar-celebracion.jpg"
+              alt="Equipo de Servipersonal celebrando logros juntos"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 1024px"
+            />
           </div>
         </div>
       </section>

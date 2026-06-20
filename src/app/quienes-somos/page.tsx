@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Shield, Eye, Heart, TrendingUp, Zap } from "lucide-react";
 
 const values = [
@@ -54,6 +55,21 @@ export default function QuienesSomosPage() {
                 servicio.&rdquo;
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative aspect-[16/7] overflow-hidden">
+            <Image
+              src="/images/equipo-quienes-somos.jpg"
+              alt="Equipo de Servipersonal de Colombia colaborando"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              priority
+            />
           </div>
         </div>
       </section>
