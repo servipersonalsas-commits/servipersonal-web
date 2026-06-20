@@ -7,12 +7,12 @@ import { Upload, CheckCircle, AlertCircle, FileText } from "lucide-react";
 
 const schema = z.object({
   nombre: z.string().min(2, "Ingresa tu nombre"),
-  email: z.string().email("Correo invalido"),
+  email: z.string().email("Correo inválido"),
   telefono: z
     .string()
-    .min(7, "Telefono muy corto")
-    .regex(/^[0-9\s\+\-]+$/, "Solo numeros"),
-  cargo: z.string().min(2, "Indica el cargo de interes"),
+    .min(7, "Teléfono muy corto")
+    .regex(/^[0-9\s\+\-]+$/, "Solo números"),
+  cargo: z.string().min(2, "Indica el cargo de interés"),
 });
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -106,7 +106,7 @@ export default function WorkWithUsForm() {
       <div className="flex flex-col items-center gap-3 py-12 text-center">
         <CheckCircle size={48} className="text-turquoise" />
         <p className="text-lg font-semibold text-petroleum">
-          Postulacion recibida
+          Postulación recibida
         </p>
         <p className="text-sm text-charcoal/60">
           Revisaremos tu hoja de vida y te contactaremos.
@@ -125,21 +125,21 @@ export default function WorkWithUsForm() {
           error={errors.nombre}
         />
         <Field
-          label="Correo electronico"
+          label="Correo electrónico"
           name="email"
           type="email"
           placeholder="correo@ejemplo.com"
           error={errors.email}
         />
         <Field
-          label="Telefono"
+          label="Teléfono"
           name="telefono"
           type="tel"
           placeholder="300 123 4567"
           error={errors.telefono}
         />
         <Field
-          label="Cargo de interes"
+          label="Cargo de interés"
           name="cargo"
           placeholder="Ej: Auxiliar administrativo"
           error={errors.cargo}
@@ -179,7 +179,7 @@ export default function WorkWithUsForm() {
         disabled={status === "sending"}
         className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-turquoise text-white font-medium text-sm hover:bg-turquoise-dark transition-colors disabled:opacity-60"
       >
-        {status === "sending" ? "Enviando..." : "Enviar postulacion"}
+        {status === "sending" ? "Enviando..." : "Enviar postulación"}
       </button>
 
       {status === "error" && (

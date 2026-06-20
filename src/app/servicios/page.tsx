@@ -2,47 +2,47 @@ import Image from "next/image";
 
 const groups = [
   {
-    name: "Gestion Administrativa y Nomina",
+    name: "Gestión Administrativa y Nómina",
     radius: "rounded-md",
     image: {
       src: "/images/nomina-administrativa.jpg",
-      alt: "Vinculacion y gestion administrativa de personal",
+      alt: "Vinculación y gestión administrativa de personal",
     },
     items: [
       {
         num: "01",
-        title: "Administracion de Nomina",
-        desc: "Gestion completa de pagos, prestaciones sociales y liquidaciones. Nos encargamos de todo el proceso de nomina, desde el calculo de salarios hasta la expedicion de certificados laborales.",
+        title: "Administración de Nómina",
+        desc: "Gestión completa de pagos, prestaciones sociales y liquidaciones. Nos encargamos de todo el proceso de nómina, desde el cálculo de salarios hasta la expedición de certificados laborales.",
       },
       {
         num: "02",
-        title: "Garantia de Cumplimiento",
-        desc: "Gestion y expedicion de nomina y liquidaciones asegurando el cumplimiento normativo, la trazabilidad de los procesos y las obligaciones del Sistema de Seguridad Social.",
+        title: "Garantía de Cumplimiento",
+        desc: "Gestión y expedición de nómina y liquidaciones asegurando el cumplimiento normativo, la trazabilidad de los procesos y las obligaciones del Sistema de Seguridad Social.",
       },
     ],
   },
   {
-    name: "Seleccion y Desarrollo de Talento",
+    name: "Selección y Desarrollo de Talento",
     radius: "rounded-2xl",
     image: {
       src: "/images/capacitacion.jpg",
-      alt: "Capacitacion y formacion de equipos de trabajo",
+      alt: "Capacitación y formación de equipos de trabajo",
     },
     items: [
       {
         num: "03",
-        title: "Reclutamiento y Seleccion",
-        desc: "Identificacion del talento ideal para su empresa. Procesos estandarizados de reclutamiento, seleccion y vinculacion de personal adaptados a las necesidades de cada entidad.",
+        title: "Reclutamiento y Selección",
+        desc: "Identificación del talento ideal para su empresa. Procesos estandarizados de reclutamiento, selección y vinculación de personal adaptados a las necesidades de cada entidad.",
       },
       {
         num: "04",
-        title: "Evaluacion de Desempeno",
-        desc: "Medicion y mejora del rendimiento laboral mediante metodologias de evaluacion estructuradas que permiten identificar areas de oportunidad y potenciar el talento.",
+        title: "Evaluación de Desempeño",
+        desc: "Medición y mejora del rendimiento laboral mediante metodologías de evaluación estructuradas que permiten identificar áreas de oportunidad y potenciar el talento.",
       },
       {
         num: "05",
-        title: "Capacitacion y Formacion",
-        desc: "Desarrollo continuo de habilidades profesionales a traves de programas de formacion disenados para fortalecer las competencias del equipo de trabajo.",
+        title: "Capacitación y Formación",
+        desc: "Desarrollo continuo de habilidades profesionales a través de programas de formación diseñados para fortalecer las competencias del equipo de trabajo.",
       },
     ],
   },
@@ -57,12 +57,12 @@ const groups = [
       {
         num: "06",
         title: "Seguridad y Salud en el Trabajo",
-        desc: "Proteccion integral del personal y cumplimiento de la normatividad en seguridad social. Gestion de afiliaciones a ARL, EPS, AFP y Cajas de Compensacion.",
+        desc: "Protección integral del personal y cumplimiento de la normatividad en seguridad social. Gestión de afiliaciones a ARL, EPS, AFP y Cajas de Compensación.",
       },
       {
         num: "07",
         title: "Bienestar Laboral",
-        desc: "Programas de incentivos y bienestar para empleados, fomentando un ambiente laboral saludable que contribuye a la productividad y satisfaccion del equipo.",
+        desc: "Programas de incentivos y bienestar para empleados, fomentando un ambiente laboral saludable que contribuye a la productividad y satisfacción del equipo.",
       },
     ],
   },
@@ -90,8 +90,8 @@ export default function ServiciosPage() {
                 Nuestros <span className="text-turquoise">Servicios</span>
               </h1>
               <p className="mt-4 text-lg text-charcoal/60 leading-relaxed max-w-xl">
-                Soluciones integrales en gestion del talento humano para entidades
-                publicas y privadas.
+                Soluciones integrales en gestión del talento humano para entidades
+                públicas y privadas.
               </p>
             </div>
           </div>

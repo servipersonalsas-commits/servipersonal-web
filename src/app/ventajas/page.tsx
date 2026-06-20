@@ -4,40 +4,40 @@ import { DollarSign, Globe, Clock, ShieldCheck } from "lucide-react";
 const advantages = [
   {
     icon: DollarSign,
-    title: "Reduccion de Costos",
-    desc: "Contribucion a la eficiencia del gasto mediante la optimizacion de los procesos administrativos asociados a la gestion del talento humano.",
+    title: "Reducción de Costos",
+    desc: "Contribución a la eficiencia del gasto mediante la optimización de los procesos administrativos asociados a la gestión del talento humano.",
     details: [
-      "Optimizacion de procesos administrativos",
-      "Reduccion de carga operativa interna",
-      "Eficiencia en la gestion de personal",
+      "Optimización de procesos administrativos",
+      "Reducción de carga operativa interna",
+      "Eficiencia en la gestión de personal",
     ],
   },
   {
     icon: Globe,
     title: "Agilidad Nacional",
-    desc: "Capacidad operativa a nivel nacional que permite la seleccion oportuna de personal y la cobertura del servicio en todo el pais.",
+    desc: "Capacidad operativa a nivel nacional que permite la selección oportuna de personal y la cobertura del servicio en todo el país.",
     details: [
       "Cobertura en todo el territorio nacional",
-      "Seleccion oportuna de personal",
-      "Respuesta rapida a sus necesidades",
+      "Selección oportuna de personal",
+      "Respuesta rápida a sus necesidades",
     ],
   },
   {
     icon: Clock,
-    title: "Liberacion Operativa",
-    desc: "Gestion integral y oportuna de las afiliaciones al Sistema de Seguridad Social (ARL, EPS, AFP y Cajas de Compensacion).",
+    title: "Liberación Operativa",
+    desc: "Gestión integral y oportuna de las afiliaciones al Sistema de Seguridad Social (ARL, EPS, AFP y Cajas de Compensación).",
     details: [
-      "Afiliacion a seguridad social",
-      "Gestion de ARL, EPS, AFP",
+      "Afiliación a seguridad social",
+      "Gestión de ARL, EPS, AFP",
       "Cumplimiento de obligaciones legales",
     ],
   },
   {
     icon: ShieldCheck,
-    title: "Garantia de Cumplimiento",
-    desc: "Gestion y expedicion de nomina y liquidaciones asegurando el cumplimiento normativo, la trazabilidad de los procesos y las obligaciones del Sistema de Seguridad Social.",
+    title: "Garantía de Cumplimiento",
+    desc: "Gestión y expedición de nómina y liquidaciones asegurando el cumplimiento normativo, la trazabilidad de los procesos y las obligaciones del Sistema de Seguridad Social.",
     details: [
-      "Expedicion de nomina y liquidaciones",
+      "Expedición de nómina y liquidaciones",
       "Trazabilidad de procesos",
       "Cumplimiento normativo garantizado",
     ],
@@ -51,7 +51,7 @@ export default function VentajasPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/ventajas-financiero.jpg"
-            alt="Analisis financiero y operativo"
+            alt="Análisis financiero y operativo"
             fill
             className="object-cover opacity-25"
             sizes="100vw"
@@ -71,7 +71,7 @@ export default function VentajasPage() {
             </div>
             <p className="hidden md:block text-base text-white/60 max-w-xs text-right">
               Cuatro pilares que hacen la diferencia financiera y operativa
-              para su organizacion.
+              para su organización.
             </p>
           </div>
         </div>

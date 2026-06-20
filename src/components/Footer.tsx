@@ -24,14 +24,14 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
-              Gestion estrategica del talento humano para entidades publicas y
+              Gestión estratégica del talento humano para entidades públicas y
               privadas en Colombia.
             </p>
           </div>
 
           <div className="md:col-span-3">
             <h4 className="text-xs font-semibold uppercase tracking-widest text-turquoise-light mb-4">
-              Navegacion
+              Navegación
             </h4>
             <ul className="space-y-2">
               {links.map((l) => (

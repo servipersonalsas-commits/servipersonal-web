@@ -91,7 +91,7 @@ export default function AdminDashboardClient({
   }
 
   function handleDelete(id: number, type: "postulacion" | "contacto") {
-    if (!confirm("¿Eliminar este registro? Esta accion no se puede deshacer."))
+    if (!confirm("¿Eliminar este registro? Esta acción no se puede deshacer."))
       return;
     setDeletingId(id);
     startTransition(async () => {
@@ -136,7 +136,7 @@ export default function AdminDashboardClient({
             className="inline-flex items-center gap-2 px-3 py-2 border border-stone rounded-md text-sm hover:border-turquoise transition-colors"
           >
             <ArrowUpDown size={14} />
-            {order === "desc" ? "Mas reciente" : "Mas antiguo"}
+            {order === "desc" ? "Más reciente" : "Más antiguo"}
           </button>
         </div>
         {(dateFrom || dateTo || order !== "desc") && (
@@ -170,7 +170,7 @@ export default function AdminDashboardClient({
                 <tr className="bg-petroleum text-white text-left">
                   <th className="px-4 py-3 font-medium">Nombre</th>
                   <th className="px-4 py-3 font-medium">Email</th>
-                  <th className="px-4 py-3 font-medium">Telefono</th>
+                  <th className="px-4 py-3 font-medium">Teléfono</th>
                   <th className="px-4 py-3 font-medium">Cargo</th>
                   <th className="px-4 py-3 font-medium">Fecha</th>
                   <th className="px-4 py-3 font-medium">CV</th>

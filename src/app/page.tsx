@@ -6,26 +6,26 @@ import SectionHeading from "@/components/SectionHeading";
 const services = [
   {
     num: "01",
-    title: "Administracion de Nomina",
-    desc: "Gestion completa de pagos y prestaciones sociales.",
+    title: "Administración de Nómina",
+    desc: "Gestión completa de pagos y prestaciones sociales.",
     icon: Briefcase,
   },
   {
     num: "02",
-    title: "Reclutamiento y Seleccion",
-    desc: "Identificacion del talento ideal para su empresa.",
+    title: "Reclutamiento y Selección",
+    desc: "Identificación del talento ideal para su empresa.",
     icon: TrendingUp,
   },
   {
     num: "03",
-    title: "Evaluacion de Desempeno",
-    desc: "Medicion y mejora del rendimiento laboral.",
+    title: "Evaluación de Desempeño",
+    desc: "Medición y mejora del rendimiento laboral.",
     icon: CheckCircle,
   },
   {
     num: "04",
     title: "Seguridad y Salud en el Trabajo",
-    desc: "Proteccion integral del personal y cumplimiento normativo.",
+    desc: "Protección integral del personal y cumplimiento normativo.",
     icon: Shield,
   },
 ];
@@ -48,19 +48,19 @@ export default function HomePage() {
               Servipersonal de Colombia S.A.S.
             </span>
             <h1 className="font-serif text-5xl md:text-7xl text-white leading-tight mb-6">
-              Gestion Estrategica del
+              Gestión Estratégica del
               <span className="text-turquoise"> Talento Humano</span>
             </h1>
             <p className="text-lg text-white/70 leading-relaxed mb-10 max-w-lg">
-              Soluciones integrales en servicios temporales y gestion del talento
-              humano para entidades publicas y privadas en Colombia.
+              Soluciones integrales en servicios temporales y gestión del talento
+              humano para entidades públicas y privadas en Colombia.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/contacto"
                 className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-turquoise text-white font-medium text-sm hover:bg-turquoise-dark transition-colors"
               >
-                Solicitar informacion <ArrowRight size={16} />
+                Solicitar información <ArrowRight size={16} />
               </Link>
               <Link
                 href="/servicios"
@@ -84,8 +84,8 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
             label="Servicios"
-            title="Soluciones en Gestion Humana"
-            description="Ofrecemos un portafolio completo de servicios para optimizar la gestion del talento humano en su organizacion."
+            title="Soluciones en Gestión Humana"
+            description="Ofrecemos un portafolio completo de servicios para optimizar la gestión del talento humano en su organización."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((s) => (
@@ -121,27 +121,27 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <span className="inline-block text-xs font-semibold uppercase tracking-[0.25em] text-turquoise mb-3">
-                Quienes Somos
+                Quiénes Somos
               </span>
               <h2 className="font-serif text-4xl md:text-5xl text-petroleum leading-tight mb-6">
                 Talento que impulsa resultados
               </h2>
               <p className="text-charcoal/70 leading-relaxed mb-4">
                 Servipersonal de Colombia S.A.S. es una empresa especializada en
-                la prestacion de servicios temporales y en la gestion integral
+                la prestación de servicios temporales y en la gestión integral
                 del talento humano, brindando soporte operativo y administrativo
-                a entidades del sector publico y privado.
+                a entidades del sector público y privado.
               </p>
               <p className="text-charcoal/70 leading-relaxed mb-6">
-                A traves de procesos estandarizados de reclutamiento, seleccion y
-                vinculacion de personal, aseguramos el cumplimiento oportuno de
+                A través de procesos estandarizados de reclutamiento, selección y
+                vinculación de personal, aseguramos el cumplimiento oportuno de
                 las disposiciones legales laborales y de seguridad social.
               </p>
               <Link
                 href="/quienes-somos"
                 className="inline-flex items-center gap-2 text-turquoise font-medium text-sm hover:underline"
               >
-                Conocer mas <ArrowRight size={16} />
+                Conocer más <ArrowRight size={16} />
               </Link>
             </div>
             <div className="relative aspect-[4/3] overflow-hidden">
@@ -161,26 +161,26 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6">
           <SectionHeading
             label="Ventajas"
-            title="Por que elegirnos"
+            title="Por qué elegirnos"
             description="Beneficios financieros y operativos que marcan la diferencia."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                title: "Reduccion de Costos",
-                desc: "Optimizacion de procesos administrativos asociados a la gestion del talento humano.",
+                title: "Reducción de Costos",
+                desc: "Optimización de procesos administrativos asociados a la gestión del talento humano.",
               },
               {
                 title: "Agilidad Nacional",
-                desc: "Capacidad operativa a nivel nacional para seleccion oportuna de personal.",
+                desc: "Capacidad operativa a nivel nacional para selección oportuna de personal.",
               },
               {
-                title: "Liberacion Operativa",
-                desc: "Gestion integral de afiliaciones al Sistema de Seguridad Social.",
+                title: "Liberación Operativa",
+                desc: "Gestión integral de afiliaciones al Sistema de Seguridad Social.",
               },
               {
-                title: "Garantia de Cumplimiento",
-                desc: "Gestion y expedicion de nomina y liquidaciones con total trazabilidad.",
+                title: "Garantía de Cumplimiento",
+                desc: "Gestión y expedición de nómina y liquidaciones con total trazabilidad.",
               },
             ].map((v) => (
               <div

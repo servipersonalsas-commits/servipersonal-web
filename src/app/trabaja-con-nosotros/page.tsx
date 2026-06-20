@@ -15,13 +15,13 @@ export default function TrabajaConNosotrosPage() {
                 Trabaja con <span className="text-turquoise">Nosotros</span>
               </h1>
               <p className="mt-4 text-lg text-charcoal/60 leading-relaxed">
-                Envianos tu hoja de vida y forma parte de nuestro equipo de
+                Envíanos tu hoja de vida y forma parte de nuestro equipo de
                 talento humano.
               </p>
             </div>
             <div className="md:col-span-4 md:text-right">
               <p className="text-sm text-charcoal/50 leading-relaxed">
-                Revisamos cada postulacion y nos pondremos en contacto cuando
+                Revisamos cada postulación y nos pondremos en contacto cuando
                 abramos una vacante afín a tu perfil.
               </p>
             </div>
@@ -49,7 +49,7 @@ export default function TrabajaConNosotrosPage() {
             <div className="md:col-span-4 space-y-6">
               <div>
                 <h3 className="font-serif text-lg text-petroleum mb-2">
-                  Que buscamos
+                  Qué buscamos
                 </h3>
                 <p className="text-sm text-charcoal/60 leading-relaxed">
                   Personas comprometidas con el servicio, dispuestas a crecer
@@ -58,10 +58,10 @@ export default function TrabajaConNosotrosPage() {
               </div>
               <div className="border-t border-stone/60 pt-6">
                 <h3 className="font-serif text-lg text-petroleum mb-2">
-                  Como participar
+                  Cómo participar
                 </h3>
                 <ol className="text-sm text-charcoal/60 space-y-2 list-decimal pl-4">
-                  <li>Llena el formulario de postulacion.</li>
+                  <li>Llena el formulario de postulación.</li>
                   <li>Adjunta tu hoja de vida en PDF o Word.</li>
                   <li>Espera nuestro contacto.</li>
                 </ol>
@@ -71,7 +71,7 @@ export default function TrabajaConNosotrosPage() {
             <div className="md:col-span-8">
               <div className="p-8 rounded-md bg-white border border-stone/60">
                 <h2 className="font-serif text-2xl text-petroleum mb-2">
-                  Postulate
+                  Postúlate
                 </h2>
                 <p className="text-sm text-charcoal/60 mb-8">
                   Adjunta tu hoja de vida y te tendremos en cuenta para futuras

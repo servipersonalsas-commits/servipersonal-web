@@ -5,7 +5,7 @@ const values = [
   {
     icon: Shield,
     title: "Cumplimiento",
-    desc: "Actuamos conforme a la legislacion laboral vigente y a los principios que rigen la contratacion publica.",
+    desc: "Actuamos conforme a la legislación laboral vigente y a los principios que rigen la contratación pública.",
   },
   {
     icon: Heart,
@@ -15,12 +15,12 @@ const values = [
   {
     icon: Eye,
     title: "Transparencia",
-    desc: "Desarrollamos nuestras operaciones con claridad, trazabilidad y comunicacion permanente.",
+    desc: "Desarrollamos nuestras operaciones con claridad, trazabilidad y comunicación permanente.",
   },
   {
     icon: Zap,
     title: "Compromiso con el servicio",
-    desc: "Orientamos nuestra gestion a la atencion oportuna y eficiente de nuestros clientes.",
+    desc: "Orientamos nuestra gestión a la atención oportuna y eficiente de nuestros clientes.",
   },
   {
     icon: TrendingUp,
@@ -39,18 +39,18 @@ export default function QuienesSomosPage() {
             Servipersonal de Colombia S.A.S.
           </span>
           <h1 className="font-serif text-6xl md:text-8xl text-petroleum leading-[0.95] mb-8 max-w-3xl">
-            Quienes
+            Quiénes
             <span className="text-turquoise"> Somos</span>
           </h1>
           <div className="grid md:grid-cols-2 gap-12">
             <p className="text-lg text-charcoal/70 leading-relaxed">
-              Empresa especializada en la prestacion de servicios temporales y en
-              la gestion integral del talento humano, brindando soporte operativo
-              y administrativo a entidades del sector publico y privado.
+              Empresa especializada en la prestación de servicios temporales y en
+              la gestión integral del talento humano, brindando soporte operativo
+              y administrativo a entidades del sector público y privado.
             </p>
             <div className="pl-6 border-l-2 border-turquoise/30">
               <p className="text-lg italic text-charcoal/80 leading-relaxed">
-                &ldquo;La innovacion en la gestion y la atencion oportuna a las
+                &ldquo;La innovación en la gestión y la atención oportuna a las
                 entidades contratantes son ejes prioritarios de nuestro
                 servicio.&rdquo;
               </p>
@@ -82,14 +82,14 @@ export default function QuienesSomosPage() {
                 <span className="text-6xl font-serif text-turquoise/20 font-bold leading-none">M</span>
                 <div>
                   <h2 className="font-serif text-2xl text-petroleum mb-4">
-                    Nuestra Mision
+                    Nuestra Misión
                   </h2>
                   <p className="text-charcoal/70 leading-relaxed">
-                    Brindar soluciones integrales y eficientes en la gestion del
-                    talento humano, mediante la prestacion de servicios temporales y
+                    Brindar soluciones integrales y eficientes en la gestión del
+                    talento humano, mediante la prestación de servicios temporales y
                     laborales, garantizando el cumplimiento estricto de la
-                    normatividad vigente, la continuidad operativa y la mitigacion
-                    de riesgos laborales para las entidades publicas y privadas.
+                    normatividad vigente, la continuidad operativa y la mitigación
+                    de riesgos laborales para las entidades públicas y privadas.
                   </p>
                 </div>
               </div>
@@ -99,13 +99,13 @@ export default function QuienesSomosPage() {
                 <span className="text-6xl font-serif text-turquoise/20 font-bold leading-none">V</span>
                 <div>
                   <h2 className="font-serif text-2xl text-petroleum mb-4">
-                    Nuestra Vision
+                    Nuestra Visión
                   </h2>
                   <p className="text-charcoal/70 leading-relaxed">
                     Ser una empresa reconocida a nivel nacional por su confiabilidad,
-                    solidez operativa y cumplimiento normativo en la prestacion de
-                    servicios de gestion del talento humano, consolidandonos como un
-                    aliado estrategico para las entidades publicas y privadas.
+                    solidez operativa y cumplimiento normativo en la prestación de
+                    servicios de gestión del talento humano, consolidándonos como un
+                    aliado estratégico para las entidades públicas y privadas.
                   </p>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function QuienesSomosPage() {
                   Valores Corporativos
                 </h2>
                 <p className="mt-4 text-charcoal/60 text-lg leading-relaxed">
-                  Los principios que guian cada una de nuestras acciones.
+                  Los principios que guían cada una de nuestras acciones.
                 </p>
               </div>
             </div>

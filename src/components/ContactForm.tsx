@@ -71,7 +71,7 @@ export default function ContactForm() {
       <div className="flex flex-col items-center gap-3 py-12 text-center">
         <CheckCircle size={48} className="text-turquoise" />
         <p className="text-lg font-semibold text-petroleum">
-          Mensaje enviado con exito
+          Mensaje enviado con éxito
         </p>
         <p className="text-sm text-charcoal/60">
           Nos pondremos en contacto pronto.
@@ -96,14 +96,14 @@ export default function ContactForm() {
           error={errors.empresa}
         />
         <Field
-          label="Correo electronico"
+          label="Correo electrónico"
           name="email"
           type="email"
           placeholder="correo@entidad.gov.co"
           error={errors.email}
         />
         <Field
-          label="Telefono"
+          label="Teléfono"
           name="telefono"
           type="tel"
           placeholder="300 123 4567"
@@ -118,7 +118,7 @@ export default function ContactForm() {
         <textarea
           name="mensaje"
           rows={4}
-          placeholder="Escriba su mensaje aqui..."
+          placeholder="Escriba su mensaje aquí..."
           className="w-full px-4 py-3 rounded-lg border border-stone/80 bg-white text-sm placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-turquoise/40 focus:border-turquoise transition-all resize-none"
         />
         {errors.mensaje && (

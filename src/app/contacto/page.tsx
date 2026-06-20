@@ -17,12 +17,12 @@ export default function ContactoPage() {
               </h1>
               <p className="text-lg text-white/60 leading-relaxed max-w-md">
                 Estamos listos para atender sus requerimientos y ofrecerle la
-                mejor solucion en gestion del talento humano.
+                mejor solución en gestión del talento humano.
               </p>
               <div className="mt-8 space-y-3">
                 <div className="flex items-center gap-3 text-white/70 text-sm">
                   <MapPin size={16} className="text-turquoise-light shrink-0" />
-                  CR 6 CL 50 B CC Plaza La Castellana OF 218, Monteria
+                  CR 6 CL 50 B CC Plaza La Castellana OF 218, Montería
                 </div>
                 <div className="flex items-center gap-3 text-white/70 text-sm">
                   <Phone size={16} className="text-turquoise-light shrink-0" />
@@ -36,7 +36,7 @@ export default function ContactoPage() {
             </div>
             <div className="hidden md:block">
               <p className="text-2xl text-white/30 font-serif italic leading-relaxed">
-                &ldquo;La atencion oportuna es parte del servicio que
+                &ldquo;La atención oportuna es parte del servicio que
                 ofrecemos.&rdquo;
               </p>
             </div>
@@ -52,17 +52,17 @@ export default function ContactoPage() {
                 <div className="flex items-center gap-3 mb-3">
                   <Clock size={18} className="text-turquoise" />
                   <h3 className="font-medium text-charcoal">
-                    Horario de atencion
+                    Horario de atención
                   </h3>
                 </div>
                 <p className="text-sm text-charcoal/60">
                   Lunes a viernes: 8:00 AM - 6:00 PM
                 </p>
-                <p className="text-sm text-charcoal/60">Sabados: 8:00 AM - 12:00 PM</p>
+                <p className="text-sm text-charcoal/60">Sábados: 8:00 AM - 12:00 PM</p>
               </div>
               <div className="p-6 rounded-2xl bg-cream">
                 <h3 className="font-medium text-charcoal mb-2">
-                  Informacion de contacto
+                  Información de contacto
                 </h3>
                 <div className="space-y-2 text-sm text-charcoal/60">
                   <div className="flex items-center gap-3">
@@ -75,7 +75,7 @@ export default function ContactoPage() {
                   </div>
                   <div className="flex items-start gap-3">
                     <MapPin size={14} className="text-turquoise shrink-0 mt-0.5" />
-                    <span>CR 6 CL 50 B CC Plaza La Castellana OF 218, Monteria</span>
+                    <span>CR 6 CL 50 B CC Plaza La Castellana OF 218, Montería</span>
                   </div>
                 </div>
               </div>
@@ -84,7 +84,7 @@ export default function ContactoPage() {
             <div className="md:col-span-3">
               <div className="p-8 rounded-md bg-white border border-stone/60">
                 <h2 className="font-serif text-2xl text-petroleum mb-6">
-                  Envienos un mensaje
+                  Envíenos un mensaje
                 </h2>
                 <ContactForm />
               </div>
