@@ -8,7 +8,7 @@ Portfolio website for Servipersonal de Colombia S.A.S., a Colombian temporary st
 
 - Next.js 16 (App Router) with TypeScript
 - Tailwind CSS v4 with custom theme tokens
-- Supabase (free tier) for contact forms and CV storage
+- Supabase (free tier) for contact forms, CV storage and admin auth
 - Zod v4 for form validation
 - Lucide React for icons
 - Playfair Display (headings) + Inter (body) via next/font/google
@@ -29,25 +29,30 @@ Portfolio website for Servipersonal de Colombia S.A.S., a Colombian temporary st
 
 Public pages are static server components. Forms are client components that use Supabase browser client - anonymous users can submit forms and upload CVs.
 
-Admin panel at `/admin` requires authentication: protected by middleware (session refresh + redirect) and server-side email whitelist check. Only `servipersonalsas@gmail.com` can access.
+Admin panel at `/admin` requires authentication: protected by `proxy.ts` (Next.js 16 renamed `middleware` to `proxy`) which refreshes the session and redirects unauthenticated users. The dashboard page additionally enforces an email whitelist (`servipersonalsas@gmail.com`) and queries Supabase in parallel for performance.
+
+Row Level Security is enabled on `contactos`, `postulaciones`, and the `cvs` storage bucket: anonymous users can insert, authenticated users can select and delete. Full security posture and pending hardening items are documented in `SECURITY.md`.
 
 Key conventions:
 - No comments in code unless necessary
 - Design aims to avoid AI-generated appearance
 - Spanish content throughout
 - Mobile-first responsive
-- Docs (SPEC.md, README.md, this file, CLAUDE.md) are gitignored
+- Docs (`SPEC.md`, `README.md`, `SECURITY.md`, `HANDOVER.md`, this file, `CLAUDE.md`) are gitignored
 
 ## Pages
 
 | Route | Type | Description |
 |---|---|---|
-| `/` | Server | Hero + services grid + about summary + advantages + CTA |
-| `/quienes-somos` | Server | Mission, vision, values |
-| `/servicios` | Server | 7 services with icons |
-| `/ventajas` | Server | 4 detailed advantages |
-| `/contacto` | Server | Contact info + validated form |
-| `/trabaja-con-nosotros` | Server | Job application form with CV upload |
+| `/` | Server (static) | Hero + services grid + about summary + advantages + CTA |
+| `/quienes-somos` | Server (static) | Mission, vision, values |
+| `/servicios` | Server (static) | 7 services organized in 3 groups (administrative, talent, wellbeing) |
+| `/ventajas` | Server (static) | 4 detailed advantages |
+| `/contacto` | Server (static) | Contact info + validated form |
+| `/trabaja-con-nosotros` | Server (static) | Job application form with CV upload |
+| `/admin` | Server (dynamic) | Dashboard with postulaciones and contactos tables, date filter, delete actions |
+| `/admin/login` | Server (static) | Login form (email + password) |
+| `/auth/logout` | Route handler (POST) | Sign out and redirect to login |
 
 ## Supabase setup needed
 
@@ -83,6 +88,16 @@ create table postulaciones (
 alter table postulaciones enable row level security;
 create policy "Anyone can insert postulaciones" on postulaciones
   for insert to anon with check (true);
+
+-- Admin read and delete access
+create policy "admin_select_contactos" on contactos
+  for select to authenticated using (true);
+create policy "admin_delete_contactos" on contactos
+  for delete to authenticated using (true);
+create policy "admin_select_postulaciones" on postulaciones
+  for select to authenticated using (true);
+create policy "admin_delete_postulaciones" on postulaciones
+  for delete to authenticated using (true);
 ```
 
 Create a storage bucket called `cvs` with RLS:
@@ -91,4 +106,9 @@ insert into storage.buckets (id, name, public) values ('cvs', 'cvs', true);
 
 create policy "Anyone can upload CVs" on storage.objects
   for insert to anon with check (bucket_id = 'cvs');
+
+create policy "Authenticated can delete CVs" on storage.objects
+  for delete to authenticated using (bucket_id = 'cvs');
 ```
+
+Full policy audit and recommended hardening steps are in `SECURITY.md`.
