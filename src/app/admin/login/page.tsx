@@ -39,8 +39,12 @@ export default function AdminLoginPage() {
     <div className="min-h-[80vh] flex items-center justify-center px-6">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <div className="w-14 h-14 rounded-full bg-gradient-to-br from-turquoise to-petroleum flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-            S
+          <div className="w-16 h-16 rounded-full bg-white border border-stone flex items-center justify-center mx-auto mb-4 p-2.5">
+            <img
+              src="/logo-icon.png"
+              alt="Servipersonal de Colombia S.A.S."
+              className="w-full h-full object-contain"
+            />
           </div>
           <h1 className="text-2xl font-bold text-petroleum font-serif">
             Acceso Administrativo
