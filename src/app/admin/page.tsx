@@ -8,18 +8,23 @@ const allowedAdmins = ["servipersonalsas@gmail.com"];
 export default async function AdminDashboard() {
   const supabase = await createClient();
   const { data: userData } = await supabase.auth.getUser();
-  if (!userData.user) redirect("/admin/login");
-  if (!allowedAdmins.includes(userData.user.email ?? "")) redirect("/admin/login");
+  if (!userData.user || !allowedAdmins.includes(userData.user.email ?? "")) {
+    redirect("/admin/login");
+  }
 
-  const { data: postulaciones } = await supabase
-    .from("postulaciones")
-    .select("*")
-    .order("created_at", { ascending: false });
+  const [postulacionesRes, contactosRes] = await Promise.all([
+    supabase
+      .from("postulaciones")
+      .select("*")
+      .order("created_at", { ascending: false }),
+    supabase
+      .from("contactos")
+      .select("*")
+      .order("created_at", { ascending: false }),
+  ]);
 
-  const { data: contactos } = await supabase
-    .from("contactos")
-    .select("*")
-    .order("created_at", { ascending: false });
+  const postulaciones = postulacionesRes.data;
+  const contactos = contactosRes.data;
 
   return (
     <div className="min-h-screen bg-cream">

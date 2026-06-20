@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 
@@ -9,6 +9,7 @@ export default function AdminLoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [, startTransition] = useTransition();
   const router = useRouter();
   const supabase = createClient();
 
@@ -28,7 +29,10 @@ export default function AdminLoginPage() {
       return;
     }
 
-    router.push("/admin");
+    startTransition(() => {
+      router.push("/admin");
+      router.refresh();
+    });
   }
 
   return (

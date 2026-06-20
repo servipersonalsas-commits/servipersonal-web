@@ -86,6 +86,7 @@ export default function Footer() {
           </p>
           <Link
             href="/admin"
+            prefetch={false}
             className="text-white/20 hover:text-white/40 transition-colors"
           >
             Admin
